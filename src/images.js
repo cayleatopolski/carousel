@@ -14,8 +14,8 @@ export const images = [
   {
     id: 3,
     imgUrl:
-      'https://images.pexels.com/photos/2187419/pexels-photo-2187419.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    imgAlt: 'Cherry blossoms on branches',
+      'https://images.pexels.com/photos/2187662/pexels-photo-2187662.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    imgAlt: 'Traditional houses in Japan',
   },
   {
     id: 4,
