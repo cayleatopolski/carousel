@@ -15,7 +15,6 @@ const SliderContent = () => {
     const interval = setInterval(() => {
       setActiveSlide(activeSlide === images.length - 1 ? 0 : activeSlide + 1);
     }, 10000);
-    console.log('interval ran and is on slide ', activeSlide);
 
     const sliderContent = document.getElementById('auto');
 
@@ -23,14 +22,12 @@ const SliderContent = () => {
     function pause() {
       clearInterval(interval);
       setIsPaused(!isPaused);
-      console.log('paused ran and state is ', isPaused);
     }
     sliderContent.addEventListener('mouseenter', pause);
 
     // resume is working but not flipping boolean
     function resume() {
       setIsPaused(isPaused);
-      console.log('resume ran and state is ', isPaused);
     }
     sliderContent.addEventListener('mouseleave', resume);
 
@@ -46,7 +43,6 @@ const SliderContent = () => {
     activeSlide === images.length - 1
       ? setActiveSlide(0)
       : setActiveSlide(activeSlide + 1);
-    console.log('next clicked', activeSlide);
   };
 
   //check activeSlide state and go back or return to initial slide
@@ -54,7 +50,6 @@ const SliderContent = () => {
     activeSlide === 0
       ? setActiveSlide(images.length - 1)
       : setActiveSlide(activeSlide - 1);
-    console.log('back clicked', activeSlide);
   };
 
   return (
