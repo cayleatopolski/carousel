@@ -1,0 +1,25 @@
+.dot {
+  padding: 10px;
+  margin: 0 5px 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: rgba(148, 187, 233, 0.8);
+}
+
+.dot:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.activeDot {
+  background: rgba(238, 174, 202, 0.8);
+}
+
+.dotContainer {
+  position: absolute;
+  bottom: 25px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}

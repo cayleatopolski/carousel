@@ -1,0 +1,21 @@
+.prevArrow,
+.nextArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  background: rgba(148, 187, 233, 0.8);
+  border-radius: 50%;
+  margin: 0 15px 0 15px;
+  transform: translateY(-50%);
+  transition: transform ease-in 0.1s;
+  z-index: 5;
+}
+
+.nextArrow {
+  right: 0;
+}

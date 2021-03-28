@@ -1,0 +1,12 @@
+.image {
+  width: inherit;
+  height: inherit;
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
