@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Slide from './Slide';
-import Dots from './Dots';
-import Arrow from './Arrow';
-import { images } from '../images';
+import Slide from '../Slide/Slide';
+import Dots from '../Dots/Dots';
+import Arrow from '../Arrow/Arrow';
+import { images } from '../../images';
 import styles from './slider-content.module.css';
 
 const SliderContent = () => {
