@@ -9,34 +9,28 @@ const SliderContent = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
+  const pause = () => {
+    setIsPaused(true);
+  };
+
+  const resume = () => {
+    setIsPaused(false);
+  };
+
   // auto advances slides, pauses on mouseenter and resumes on mouseleave
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveSlide(activeSlide === images.length - 1 ? 0 : activeSlide + 1);
-    }, 10000);
-
-    const sliderContent = document.getElementById('auto');
-
-    // pause is working but not flipping boolean
-    function pause() {
+    const interval = setInterval(
+      () =>
+        setActiveSlide(activeSlide === images.length - 1 ? 0 : activeSlide + 1),
+      10000
+    );
+    if (isPaused) {
       clearInterval(interval);
-      setIsPaused(!isPaused);
     }
-    sliderContent.addEventListener('mouseenter', pause);
-
-    // resume is working but not flipping boolean
-    function resume() {
-      setIsPaused(isPaused);
-    }
-    sliderContent.addEventListener('mouseleave', resume);
-
     return () => {
       clearInterval(interval);
-      sliderContent.removeEventListener('mouseenter', pause);
-      sliderContent.removeEventListener('mouseleave', resume);
     };
-  }, [activeSlide]);
+  }, [isPaused, activeSlide]);
 
   //check activeSlide state and advance forward or return to initial slide
   const handleNextClick = () => {
@@ -54,7 +48,11 @@ const SliderContent = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div id='auto' className={styles.sliderContent}>
+      <div
+        className={styles.sliderContent}
+        onMouseEnter={pause}
+        onMouseLeave={resume}
+      >
         <div className={styles.slide}>
           {images.map((slide, index) => (
             <Slide

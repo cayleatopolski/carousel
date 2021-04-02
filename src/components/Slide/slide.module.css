@@ -1,6 +1,5 @@
 .image {
-  width: inherit;
-  height: inherit;
+  width: 100%;
 }
 
 .active {
